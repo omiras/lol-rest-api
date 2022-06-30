@@ -17,7 +17,7 @@ const getChampionById = (req, res) => {
 
     // 2. Invocar al servicio para pedirle el campeón
     // El servicio nos va a devolver el valor undefined si no encuentra el campeón identificado con el id
-    const champion = championsServices.getChamptionById(id);
+    const champion = championsServices.getChampionById(id);
 
     // Si no he podido encontrar el campeón, devolver un error
     if (!champion) {
@@ -34,7 +34,20 @@ const getChampionById = (req, res) => {
     })
 }
 
+const getChampionsByTag = (req, res) => {
+
+    const { tag } = req.params;
+
+    const champions = championsServices.getChampionsByTag(tag);
+
+    res.send({
+        status: "OK",
+        data: champions
+    })
+}
+
 module.exports = {
     getAllChampions,
-    getChampionById
+    getChampionById,
+    getChampionsByTag
 }

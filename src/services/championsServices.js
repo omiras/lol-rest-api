@@ -7,12 +7,17 @@ const getAllChampions = () => {
     return Champion.getAllChampions();
 }
 
-const getChamptionById = (id) => {
+const getChampionById = (id) => {
     return Champion.getChampionById(id);
+}
+
+const getChampionsByTag = (tag) => {
+    const champions = Champion.getChampionsByTag(tag);
+    return champions;
 }
 
 module.exports = {
     getAllChampions,
-    getChamptionById
+    getChampionById,
+    getChampionsByTag
 }
-
