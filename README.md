@@ -42,3 +42,6 @@ Solo devolverá los primeros 10 campeones
    - Assassin
 - Al seleccionar uno de estos tipos, se debe actualizar la sección id=champions solo con estos campones
 - Hacer una petición a la API /api/v1/champions/tags/:tag
+
+# Ejercicio 2 - 4 de Julio
+- Implementar el punto 4 de creación de APIs, y permitir limitar el número de campeones a recuperar de la API
