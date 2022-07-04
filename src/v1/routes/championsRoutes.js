@@ -60,7 +60,7 @@ router.get("/:id", championsControllers.getChampionById);
 
 /**
  * @openapi
- * /api/v1/champions/tags/{tag}:
+ * /api/v1/champions/tag/{tag}:
  *   get:
  *     summary: Get the champions that belong to a specified tag
  *     parameters:
