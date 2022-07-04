@@ -29,3 +29,16 @@ Solo devolverá los primeros 10 campeones
 2. Añadir el controlador en controllers/championControllers.js
 3. Implementar el servicio en services/championServices.js
 4. Implementar el acceso al JSON en Champion.js
+
+
+## Ejercicio 4 de Julio
+
+- Usar un select para poder filtrar por tipo de personajes 
+   - Tank
+   - Mage
+   - Support
+   - Fighter
+   - Marksman
+   - Assassin
+- Al seleccionar uno de estos tipos, se debe actualizar la sección id=champions solo con estos campones
+- Hacer una petición a la API /api/v1/champions/tags/:tag
