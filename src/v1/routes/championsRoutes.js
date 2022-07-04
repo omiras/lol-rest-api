@@ -22,7 +22,8 @@ const router = express.Router();
  *                   type: string
  *                   example: OK
  *                 data:
- *                   type: array 
+ *                   type: array
+ *                   description: Array de objetos con todos los campeones
  *                      
  */
 router.get("/", championsControllers.getAllChampions);

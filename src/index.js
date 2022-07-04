@@ -7,6 +7,8 @@ const { swaggerDocs: V1SwaggerDocs } = require("./v1/swagger");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use(express.static('public'));
+
 // *** ADD ***
 app.use("/api/v1/champions", championsRoutes);
 

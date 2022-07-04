@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+
+</head>
+
+<body>
+    <h1>Lista de campeones de League Of Legends</h1>
+    <section class="container" id="champions">
+
+    </section>
+    <script>
+        async function fillChampions() {
+            // 1. Pedir todos los campeones con un GET a /v1/api/champions
+            const response = await fetch("/api/v1/champions");
+
+            const data = await response.json();
+            console.log(data);
+
+            // 2. Generar tantas tarjetas de campeones como elementos hay en el array que recuperemos
+            // 2.1 Me quedo con el nombre y la imagen del campeón
+
+            /**
+             * <article>
+  <header>Header</header>
+  Body
+</article> **/
+            if (data.status != "OK") {
+                console.error("Algo ha ido mal en la llamada...")
+                return;
+            }
+
+            data.data.forEach(c => {
+                let champion = document.createElement("article");
+                champion.innerHTML = `<header>${c.name}</header>
+                                      <img src="${c.icon}"></img>
+                                      <footer>${c.description}</footer>`;
+                document.querySelector("#champions").appendChild(champion);
+            });
+
+
+        }
+
+        fillChampions();
+    </script>
+
+</body>
+
+</html>
