@@ -13,9 +13,28 @@
 <body>
     <h1>Lista de campeones de League Of Legends</h1>
     <section class="container" id="champions">
-
+        <form action="">
+            <label for="">Filtrar campeón por tipo</label>
+            <select id="filter-champion">
+                <option value="" selected>-----</option>
+                <option value="Tank">Tank</option>
+                <option value="Mage">Mage</option>
+                <option value="Support">Support</option>
+                <option value="Assassin">Assassin</option>
+                <option value="Marksman">Marksman</option>
+                <option value="Fighter">Fighter</option>
+            </select>
+        </form>
     </section>
     <script>
+        document.querySelector("#filter-champion").addEventListener("change", (event) => {
+            let tag = event.target.value;
+
+            // TODO: Hacer una petición GET al endpoint adecuado y rellenar la sección de campeones
+
+        })
+
+
         async function fillChampions() {
             // 1. Pedir todos los campeones con un GET a /v1/api/champions
             const response = await fetch("/api/v1/champions");
